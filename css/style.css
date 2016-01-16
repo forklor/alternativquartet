@@ -50,14 +50,29 @@ nav li {
 	margin: 0 0.75em;
 }
 
+nav li.separator {
+	font-size: 1.2em;
+	vertical-align: middle;
+}
+
 nav li.separator:after {
 	content: '‡';
 }
 
 section {
-	padding: 1em;
-	border: 1px solid currentColor;
-	margin: 1em 0;
+	padding: 0 1em 1em 1em;
+	border: 1px solid #ddd;
+	margin: 2.5em 0;
+}
+
+section h2 {
+	margin-top: -0.65em;
+}
+
+section h2 span {
+	display: inline-block;
+	background: #fff;
+	padding: 0 0.5em;
 }
 
 .turneu {
@@ -65,8 +80,10 @@ section {
 	border-collapse: collapse;
 }
 
-.turneu tr {
-	border-bottom: 1px solid currentColor;
+.turneu thead tr {
+	border-bottom: 1px solid #ddd;
+	text-transform: lowercase;
+	font-variant: small-caps;
 }
 
 .turneu td, 
@@ -77,8 +94,9 @@ section {
 }
 
 .album {
-	padding: 1em 0;
-	border-top: 1px solid currentColor;
+	/*padding: 1em 0;*/
+	/*border-top: 1px solid currentColor;*/
+	padding-bottom: 1em;
 }
 
 .album h3, .album h4 {
