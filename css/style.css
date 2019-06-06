@@ -2,10 +2,10 @@ body {
 	padding: 1em;
 	text-align: center;
 	font-family: adobe-garamond-pro, serif; 
-	max-width: 40em;
+	max-width: 50em;
 	margin: 0 auto;
 	color: #222;
-	font-size: 140%;
+	font-size: 120%;
 	line-height: 1.4;
 }
 
@@ -26,6 +26,12 @@ ul {
 a {
 	text-decoration: none;
 	color: #c00;
+}
+
+img {
+	vertical-align: middle;
+	display: inline-block;
+	max-width: 100%;
 }
 
 .cf:after {
@@ -115,9 +121,21 @@ section h2 span {
 	margin-bottom: 1em;
 }
 
+.album--secondary {
+	padding-bottom: 0;
+}
+
+.album--secondary h3 {
+	font-size: 1em;
+}
+
+.album--secondary h4 {
+	font-size: 0.8em;
+}
+
 .album__cover {
 	display: block;
-	max-width: 20em;
+	/*max-width: 16em;*/
 	margin: 0 auto;
 	position: relative;
 	background: #000;
@@ -150,10 +168,41 @@ section h2 span {
 	border-radius: 0.2em;
 }
 
+.album--secondary .album__cover:after {
+	font-size: 0.75em;
+	letter-spacing: 0.1em;
+}
+
+.linkbtn {
+	position: relative;
+}
+
+.linkbtn:after {
+	content: attr(data-title);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: 0.2s opacity;
+
+	font-variant: small-caps;
+	letter-spacing: 0.05em;
+	text-transform: lowercase;
+	background: #c00;
+	padding: 0em 0.5em;
+	color: #fff;
+	border-radius: 0.2em;
+}
+
+.linkbtn:hover:after {
+	opacity: 1;
+}
+
 .slash {
-	font-size: 1.2em;
-	display: inline-block;
-	vertical-align: middle;
+	/*font-size: 1.2em;*/
+	/*display: inline-block;*/
+	/*vertical-align: middle;*/
 }
 
 .dagger {
@@ -175,23 +224,37 @@ section h2 span {
 }
 
 .album__link {
-	display: inline-block;
+	/*display: inline-block;*/
 	height: 1.25em;
 	background-repeat: no-repeat;
+	/*margin: 0.25em;*/
+	display: block;
+	margin: 1em auto;
+}
+
+.album--secondary .album__link {
+	font-size: 0.75em;
 }
 
 .album__link--apple {
 	background-image: url('../img/apple-music-bw.svg');
 	background-size: auto 1em;
 	background-position: center 40%;
-	width: 6em;
+	width: 5em;
 }
 
 .album__link--spotify {
 	background-image: url('../img/spotify-bw.png');
 	background-size: auto 1.25em;
 	background-position: center center;
-	width: 6em;
+	width: 5em;
+}
+
+.album__link--bandcamp {
+	background-image: url('../img/bandcamp.svg');
+	background-size: auto 1.1em;
+	background-position: center 90%;
+	width: 7em;
 }
 
 footer {
@@ -200,8 +263,27 @@ footer {
 	margin: 2em 0;
 }
 
+/* Grids */
+.grid {
+	display: grid;
+	grid-column-gap: 1.5em;
+	align-items: stretch;
+}
+
+.grid--2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
 /* mobile */
 @media (max-width:33em) {
+	.grid {
+		display: block;
+	}
+
 	body {
 		font-size: 110%;
 		padding: 0.5em;
